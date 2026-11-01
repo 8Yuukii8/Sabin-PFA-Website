@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotea Sabin PFA - Rezervare</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <img src="imagini/logo.png" alt="Logo Hotea Sabin PFA">
+            <div>
+                <a href="index.html" class="logo-title">Hotea Sabin</a>
+                <span class="logo-subtitle">PFA Construcții</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li>
+                <a href="index.html#acasa" onclick="countControl('Meniu Acasă')">Acasă</a>
+            </li>
+
+            <li class="dropdown-custom">
+                <a href="index.html#servicii" onclick="countControl('Meniu Servicii')">Servicii</a>
+
+                <ul class="dropdown-list">
+                    <li><a href="rezervare.html?lucrare=Construcție%20casă">Construcții case</a></li>
+                    <li><a href="rezervare.html?lucrare=Acoperiș">Acoperișuri</a></li>
+                    <li><a href="rezervare.html?lucrare=Turnare%20placă%20beton">Turnare plăci</a></li>
+                    <li><a href="rezervare.html?lucrare=Izolație%20termică">Izolații termice</a></li>
+                    <li><a href="rezervare.html?lucrare=Gard">Garduri</a></li>
+                    <li><a href="rezervare.html?lucrare=Cerere%20specială">Cereri speciale</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="index.html#cum-functioneaza" onclick="countControl('Meniu Cum funcționează')">Cum funcționează</a>
+            </li>
+
+            <li>
+                <a href="proiecte.html" onclick="countControl('Meniu Proiecte')">Proiecte</a>
+            </li>
+
+            <li>
+                <a href="rezervare.html" class="active" onclick="countControl('Meniu Rezervare')">Rezervare</a>
+            </li>
+
+            <li>
+                <a href="contact.html" onclick="countControl('Meniu Contact')">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="projects-hero reservation-hero">
+        <h1>Solicită ofertă</h1>
+        <p>Completează formularul pentru lucrarea dorită.</p>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <span>Rezervare</span>
+            <h2>Cerere lucrare</h2>
+            <p>Alege întâi tipul lucrării. Pentru cereri speciale, formularul devine mai detaliat.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form id="bookingForm" class="form-box" onsubmit="return validateBookingForm(event)">
+
+                    <div id="formGeneralError" class="form-general-error d-none">
+                        Nu ați introdus toate datele necesare. Completați câmpurile marcate cu *.
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <b>Important:</b> Puteți încărca poze, planșe de arhitectură, planșe de rezistență sau alte documente.
+                    </div>
+
+                    <div class="control-item">
+                        <label class="form-label">Tip lucrare</label>
+                        <select onfocus="countControl('Câmp tip lucrare')" onchange="toggleSpecialForm()" id="lucrare" class="form-select">
+                            <option value="">Alege tipul lucrării</option>
+                            <option value="Construcție casă">Construcție casă</option>
+                            <option value="Acoperiș">Acoperiș</option>
+                            <option value="Turnare placă beton">Turnare placă beton</option>
+                            <option value="Izolație termică">Izolație termică</option>
+                            <option value="Gard">Gard</option>
+                            <option value="Cerere specială">Cerere specială</option>
+                        </select>
+                        <small class="error" id="eroareLucrare"></small>
+                    </div>
+
+                    <div id="normalForm">
+                        <div id="formControls">
+                            <div class="control-item">
+                                <label class="form-label">Nume complet</label>
+                                <input onfocus="countControl('Câmp nume')" type="text" id="nume" class="form-control">
+                                <small class="error" id="eroareNume"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Telefon</label>
+                                <input onfocus="countControl('Câmp telefon')" type="text" id="telefon" class="form-control">
+                                <small class="error" id="eroareTelefon"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Email</label>
+                                <input onfocus="countControl('Câmp email')" type="text" id="email" class="form-control">
+                                <small class="error" id="eroareEmail"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Oraș din România</label>
+
+                                <div class="custom-search-wrapper">
+                                    <input
+                                        onfocus="countControl('Câmp locație')"
+                                        oninput="filterCities('locatie', 'locatieSuggestions')"
+                                        onfocusin="filterCities('locatie', 'locatieSuggestions')"
+                                        onblur="hideSuggestions('locatieSuggestions')"
+                                        type="text"
+                                        id="locatie"
+                                        class="form-control"
+                                        placeholder="Scrie orașul..."
+                                        autocomplete="off"
+                                    >
+                                    <div id="locatieSuggestions" class="city-suggestions"></div>
+                                </div>
+
+                                <small class="text-muted">Ex: Timișoara, Arad, București</small>
+                                <small class="error" id="eroareLocatie"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Buget estimativ</label>
+                                <input onfocus="countControl('Câmp buget')" type="number" id="buget" class="form-control">
+                                <small class="error" id="eroareBuget"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Detalii lucrare</label>
+                                <textarea onfocus="countControl('Câmp mesaj')" id="mesaj" class="form-control" rows="4"></textarea>
+                                <small class="error" id="eroareMesaj"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+
+                            <div class="control-item">
+                                <label class="form-label">Încarcă poze / planșe / documente</label>
+                                <input onfocus="countControl('Câmp încărcare fișiere')" type="file" id="fisiere" class="form-control" multiple>
+                                <small class="text-muted">Puteți selecta mai multe fișiere: poze, planșe, acte sau documente.</small>
+                                <small class="error" id="eroareFisiere"></small>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveUp(this)">Mută sus</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="moveDown(this)">Mută jos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="specialForm" class="special-form d-none">
+                        <h3>Cerere specială - formular detaliat</h3>
+                        <p>Pentru cererile speciale avem nevoie de mai multe informații, inclusiv dacă lucrarea este în România sau în străinătate.</p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nume complet</label>
+                                <input onfocus="countControl('Câmp nume special')" type="text" id="numeSpecial" class="form-control">
+                                <small class="error" id="eroareNumeSpecial"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Telefon</label>
+                                <input onfocus="countControl('Câmp telefon special')" type="text" id="telefonSpecial" class="form-control">
+                                <small class="error" id="eroareTelefonSpecial"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input onfocus="countControl('Câmp email special')" type="text" id="emailSpecial" class="form-control">
+                                <small class="error" id="eroareEmailSpecial"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Unde se află lucrarea?</label>
+                                <select onfocus="countControl('Câmp zonă specială')" onchange="toggleForeignLocation()" id="zonaSpeciala" class="form-select">
+                                    <option value="">Alege zona</option>
+                                    <option value="România">România</option>
+                                    <option value="Străinătate">Străinătate</option>
+                                </select>
+                                <small class="error" id="eroareZonaSpeciala"></small>
+                            </div>
+
+                            <div class="col-md-6" id="orasRomaniaBox">
+                                <label class="form-label">Oraș din România</label>
+
+                                <div class="custom-search-wrapper">
+                                    <input
+                                        onfocus="countControl('Câmp oraș special România')"
+                                        oninput="filterCities('orasSpecialRomania', 'orasSpecialSuggestions')"
+                                        onfocusin="filterCities('orasSpecialRomania', 'orasSpecialSuggestions')"
+                                        onblur="hideSuggestions('orasSpecialSuggestions')"
+                                        type="text"
+                                        id="orasSpecialRomania"
+                                        class="form-control"
+                                        placeholder="Scrie orașul..."
+                                        autocomplete="off"
+                                    >
+                                    <div id="orasSpecialSuggestions" class="city-suggestions"></div>
+                                </div>
+
+                                <small class="text-muted">Ex: Timișoara, Arad, București</small>
+                                <small class="error" id="eroareOrasSpecialRomania"></small>
+                            </div>
+
+                            <div class="col-md-6 d-none" id="strainatateBox">
+                                <label class="form-label">Țara și orașul din străinătate</label>
+                                <input onfocus="countControl('Câmp locație străinătate')" type="text" id="locatieStrainatate" class="form-control" placeholder="Ex: Germania, München">
+                                <small class="error" id="eroareLocatieStrainatate"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Tip cerere specială</label>
+                                <select onfocus="countControl('Câmp tip cerere specială')" id="tipSpecial" class="form-select">
+                                    <option value="">Alege o opțiune</option>
+                                    <option value="Extindere casă">Extindere casă</option>
+                                    <option value="Anexă gospodărească">Anexă gospodărească</option>
+                                    <option value="Reparații structură">Reparații structură</option>
+                                    <option value="Demolare parțială">Demolare parțială</option>
+                                    <option value="Amenajare exterior">Amenajare exterior</option>
+                                    <option value="Alt tip de lucrare">Alt tip de lucrare</option>
+                                </select>
+                                <small class="error" id="eroareTipSpecial"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Termen dorit pentru începere</label>
+                                <input onfocus="countControl('Câmp termen special')" type="date" id="termenSpecial" class="form-control">
+                                <small class="error" id="eroareTermenSpecial"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Suprafață aproximativă</label>
+                                <input onfocus="countControl('Câmp suprafață specială')" type="number" id="suprafataSpeciala" class="form-control" placeholder="Ex: 120">
+                                <small class="error" id="eroareSuprafataSpeciala"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Există autorizație?</label>
+                                <select onfocus="countControl('Câmp autorizație specială')" id="autorizatieSpeciala" class="form-select">
+                                    <option value="">Alege răspunsul</option>
+                                    <option value="Da">Da</option>
+                                    <option value="Nu">Nu</option>
+                                    <option value="În curs">În curs</option>
+                                    <option value="Nu este necesară">Nu este necesară</option>
+                                </select>
+                                <small class="error" id="eroareAutorizatieSpeciala"></small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Buget estimativ</label>
+                                <input onfocus="countControl('Câmp buget special')" type="number" id="bugetSpecial" class="form-control">
+                                <small class="error" id="eroareBugetSpecial"></small>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Descriere detaliată a cererii speciale</label>
+                                <textarea onfocus="countControl('Câmp descriere specială')" id="descriereSpeciala" class="form-control" rows="5" placeholder="Descrie cât mai clar ce lucrare dorești."></textarea>
+                                <small class="error" id="eroareDescriereSpeciala"></small>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Încarcă poze / proiecte / documente</label>
+                                <input onfocus="countControl('Câmp fișiere special')" type="file" id="fisiereSpeciale" class="form-control" multiple>
+                                <small class="text-muted">Puteți încărca poze, planșe, acte sau alte documente relevante.</small>
+                                <small class="error" id="eroareFisiereSpeciale"></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-main w-100 mt-3">
+                        Trimite cererea
+                    </button>
+
+                    <p id="successMessage" class="success mt-3"></p>
+                </form>
+            </div>
+        </div>
+
+        <section class="stats-box mt-5">
+            <div class="stats-header">
+                <h4>Statistici de interacțiune</h4>
+
+                <button type="button" onclick="resetStats()" class="stats-reset-btn">
+                    Resetează statistici
+                </button>
+            </div>
+
+            <div id="stats"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Hotea Sabin PFA</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

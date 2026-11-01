@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabin PFA - Proiecte</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <img src="imagini/logo.png" alt="Logo Sabin PFA">
+            <div>
+                <a href="index.html" class="logo-title">Sabin</a>
+                <span class="logo-subtitle">PFA Construcții</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html#acasa" onclick="countControl('Meniu Acasă')">Acasă</a></li>
+
+            <li class="dropdown-custom">
+                <a href="index.html#servicii" onclick="countControl('Meniu Servicii')">Servicii</a>
+                <ul class="dropdown-list">
+                    <li><a href="rezervare.html?lucrare=Construcție%20casă">Construcții case</a></li>
+                    <li><a href="rezervare.html?lucrare=Acoperiș">Acoperișuri</a></li>
+                    <li><a href="rezervare.html?lucrare=Turnare%20placă%20beton">Turnare plăci</a></li>
+                    <li><a href="rezervare.html?lucrare=Izolație%20termică">Izolații termice</a></li>
+                    <li><a href="rezervare.html?lucrare=Gard">Garduri</a></li>
+                    <li><a href="rezervare.html?lucrare=Cerere%20specială">Cereri speciale</a></li>
+                </ul>
+            </li>
+
+            <li><a href="index.html#cum-functioneaza" onclick="countControl('Meniu Cum funcționează')">Cum funcționează</a></li>
+
+            <li><a href="proiecte.html" class="active" onclick="countControl('Meniu Proiecte')">Proiecte</a></li>
+
+            <li><a href="rezervare.html" onclick="countControl('Meniu Rezervare')">Rezervare</a></li>
+
+            <li><a href="contact.html" onclick="countControl('Meniu Contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="projects-hero">
+        <h1>Proiecte și lucrări</h1>
+        <p>Imagini și videoclipuri din lucrări de construcții, acoperișuri și șantiere.</p>
+    </header>
+
+    <main class="container section-space" id="galerie-completa">
+
+        <section class="portfolio-intro">
+            <span class="small-label">Portofoliu</span>
+            <h2>Lucrări realizate</h2>
+            <div class="orange-line"></div>
+            <p>
+                Galeria prezintă lucrări executate în diferite etape: fundații, zidărie,
+                acoperișuri, case la roșu, garduri și proiecte speciale.
+            </p>
+
+            <div class="portfolio-links">
+                <a href="#galerie-completa" onclick="countControl('Link galerie completă')">Galerie completă</a>
+                <a href="#duplex" onclick="countControl('Link duplex')">Duplex</a>
+                <a href="#case-parter" onclick="countControl('Link case parter')">Case parter</a>
+                <a href="#case-etajate" onclick="countControl('Link case etajate')">Case etajate</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="project-section-title">
+                <span>Galerie</span>
+                <h2>Toate lucrările</h2>
+                <p>Selecție de imagini și videoclipuri din lucrări aflate în execuție.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="imagini/casa1.jpg" alt="Casă în construcție">
+                    <div class="gallery-card-body">
+                        <span>Casă în lucru</span>
+                        <h3>Structură și zidărie</h3>
+                        <p>Lucrare de construcție aflată în etapa de zidărie și pregătire acoperiș.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa24.jpg" alt="Casă etajată în construcție">
+                    <div class="gallery-card-body">
+                        <span>Casă etajată</span>
+                        <h3>Construcție casă etajată</h3>
+                        <p>Lucrare aflată în etapa de zidărie și acoperiș.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa25.jpg" alt="Casă finalizată">
+                    <div class="gallery-card-body">
+                        <span>Casă finalizată</span>
+                        <h3>Locuință modernă</h3>
+                        <p>Casă finalizată cu gard, fațadă și amenajări exterioare.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa26.jpg" alt="Casă finalizată cu gard">
+                    <div class="gallery-card-body">
+                        <span>Casă finalizată</span>
+                        <h3>Lucrare rezidențială</h3>
+                        <p>Construcție finalizată cu gard și zonă exterioară amenajată.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/ema1.jpg" alt="Lucrare exterioară finalizată">
+                    <div class="gallery-card-body">
+                        <span>Lucrare specială</span>
+                        <h3>Amenajare exterioară</h3>
+                        <p>Lucrare amplă cu zonă exterioară, acoperiș și spațiu amenajat.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/santier2.jpg" alt="Șantier acoperiș">
+                    <div class="gallery-card-body">
+                        <span>Acoperiș</span>
+                        <h3>Montaj acoperiș</h3>
+                        <p>Etapă de montare și pregătire a acoperișului.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa2.jpg" alt="Structură acoperiș">
+                    <div class="gallery-card-body">
+                        <span>Acoperiș</span>
+                        <h3>Structură din lemn</h3>
+                        <p>Pregătirea și montarea structurii pentru acoperiș.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa3.jpg" alt="Casă cu acoperiș în lucru">
+                    <div class="gallery-card-body">
+                        <span>Casă</span>
+                        <h3>Ridicare acoperiș</h3>
+                        <p>Etapă de lucru pentru acoperiș și închiderea construcției.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa4.jpg" alt="Acoperiș și coș">
+                    <div class="gallery-card-body">
+                        <span>Acoperiș</span>
+                        <h3>Detaliu acoperiș</h3>
+                        <p>Lucrare de acoperiș cu detalii pentru coș și învelitoare.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa5.jpg" alt="Acoperiș finalizat">
+                    <div class="gallery-card-body">
+                        <span>Acoperiș</span>
+                        <h3>Învelitoare montată</h3>
+                        <p>Montaj acoperiș și elemente de protecție.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa6.jpg" alt="Casă la roșu">
+                    <div class="gallery-card-body">
+                        <span>Casă la roșu</span>
+                        <h3>Construcție parter</h3>
+                        <p>Casă aflată în etapa de zidărie și acoperiș.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa7.jpg" alt="Casă parter">
+                    <div class="gallery-card-body">
+                        <span>Casă parter</span>
+                        <h3>Lucrare exterioară</h3>
+                        <p>Construcție parter, pregătită pentru următoarele etape.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa8.jpg" alt="Detaliu acoperiș">
+                    <div class="gallery-card-body">
+                        <span>Detaliu lucrare</span>
+                        <h3>Îmbinări și finisaje</h3>
+                        <p>Detaliu de lucru pentru zona acoperișului și a structurii.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa9.jpg" alt="Zidărie casă">
+                    <div class="gallery-card-body">
+                        <span>Zidărie</span>
+                        <h3>Pereți exteriori</h3>
+                        <p>Execuție zidărie pentru construcție rezidențială.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="imagini/casa10.jpg" alt="Casă cu etaj">
+                    <div class="gallery-card-body">
+                        <span>Casă etajată</span>
+                        <h3>Construcție în lucru</h3>
+                        <p>Lucrare cu terasă și structură în dezvoltare.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls>
+                        <source src="video/santier1.mp4" type="video/mp4">
+                        Browserul nu suportă redarea video.
+                    </video>
+                    <div class="gallery-card-body">
+                        <span>Video șantier</span>
+                        <h3>Lucrare în desfășurare</h3>
+                        <p>Videoclip de prezentare din timpul lucrării.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls>
+                        <source src="video/santier2.mp4" type="video/mp4">
+                        Browserul nu suportă redarea video.
+                    </video>
+                    <div class="gallery-card-body">
+                        <span>Video șantier</span>
+                        <h3>Proces de execuție</h3>
+                        <p>Etape surprinse direct pe șantier.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls>
+                        <source src="video/santier3.mp4" type="video/mp4">
+                        Browserul nu suportă redarea video.
+                    </video>
+                    <div class="gallery-card-body">
+                        <span>Video șantier</span>
+                        <h3>Prezentare lucrare</h3>
+                        <p>Clip video cu evoluția lucrării.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="duplex" class="project-section-block">
+            <div class="project-section-title">
+                <span>Proiecte</span>
+                <h2>Duplex</h2>
+                <p>Secțiune dedicată locuințelor tip duplex. Imaginile finale vor fi adăugate ulterior.</p>
+            </div>
+
+            <div class="project-row">
+                <div class="project-feature-card">
+                    <img src="imagini/casa1.jpg" alt="Duplex temporar">
+                    <div>
+                        <span>Duplex</span>
+                        <h3>Locuință tip duplex</h3>
+                        <p>Imagine temporară până la adăugarea proiectelor finale pentru această categorie.</p>
+                    </div>
+                </div>
+
+                <div class="project-feature-card">
+                    <img src="imagini/casa24.jpg" alt="Duplex în lucru">
+                    <div>
+                        <span>Duplex</span>
+                        <h3>Construcție duplex</h3>
+                        <p>Secțiune dedicată lucrărilor tip duplex, cu poze finale adăugate ulterior.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-parter" class="project-section-block">
+            <div class="project-section-title">
+                <span>Proiecte</span>
+                <h2>Case parter</h2>
+                <p>Lucrări pentru case pe un singur nivel, de la fundație până la acoperiș.</p>
+            </div>
+
+            <div class="project-row">
+                <div class="project-feature-card">
+                    <img src="imagini/casa6.jpg" alt="Casă parter">
+                    <div>
+                        <span>Casă parter</span>
+                        <h3>Construcție casă parter</h3>
+                        <p>Lucrare aflată în etapa de zidărie și pregătire pentru acoperiș.</p>
+                    </div>
+                </div>
+
+                <div class="project-feature-card">
+                    <img src="imagini/casa25.jpg" alt="Casă parter finalizată">
+                    <div>
+                        <span>Casă parter</span>
+                        <h3>Casă finalizată</h3>
+                        <p>Lucrare finalizată cu exterior și împrejmuire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-etajate" class="project-section-block">
+            <div class="project-section-title">
+                <span>Proiecte</span>
+                <h2>Case etajate</h2>
+                <p>Construcții pe două niveluri, cu structură, zidărie și acoperiș.</p>
+            </div>
+
+            <div class="project-row">
+                <div class="project-feature-card">
+                    <img src="imagini/casa14.jpg" alt="Casă etajată">
+                    <div>
+                        <span>Casă etajată</span>
+                        <h3>Structură ridicată</h3>
+                        <p>Casă etajată în lucru, cu structură și acoperiș în etapa de execuție.</p>
+                    </div>
+                </div>
+
+                <div class="project-feature-card">
+                    <img src="imagini/casa26.jpg" alt="Casă etajată finalizată">
+                    <div>
+                        <span>Casă etajată</span>
+                        <h3>Casă finalizată</h3>
+                        <p>Construcție cu exterior finalizat și gard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-box mt-5">
+            <div class="stats-header">
+                <h4>Statistici de interacțiune</h4>
+
+                <button type="button" onclick="resetStats()" class="stats-reset-btn">
+                    Resetează statistici
+                </button>
+            </div>
+
+            <div id="stats"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Sabin PFA </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
